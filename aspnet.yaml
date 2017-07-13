@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cloudiqdocker
+spec:
+  containers:
+  - image: cloudiqreg.azurecr.io/ciqdocker
+    name: ciqdocker
+  nodeSelector:
+    beta.kubernetes.io/os: windows
+  imagePullSecrets:
+   -  name: cloudiq-acr
